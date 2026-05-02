@@ -1,37 +1,35 @@
-from database import create_connection
 import sqlite3
+from database import create_connection
 
-def add_user(name, email):
-    conn = create_connection()
-    cursor = conn.cursor()
-    try:
-        cursor.execute("INSERT INTO users (name, email) VALUES (?, ?)", (name, email))
-        conn.commit()
-        print(" User added successfully.")
-    except sqlite3.IntegrityError:
-        print(" Email must be unique.")
-    conn.close()
+def add_user(full_name, email, phone_number, password_hash, registration_date, user_status):
+    """Adds a new user to the User table."""
+    sql = """INSERT INTO User (full_name, email, phone_number, password_hash, registration_date, user_status)
+             VALUES (?, ?, ?, ?, ?, ?)"""
+    with create_connection() as conn:
+        try:
+            cursor = conn.cursor()
+            cursor.execute(sql, (full_name, email, phone_number, password_hash, registration_date, user_status))
+            conn.commit()
+            print("User added successfully.")
+        except sqlite3.Error as e:
+            print(f"Database error: {e}")
 
 def view_users():
-    conn = create_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users")
-    rows = cursor.fetchall()
-    conn.close()
-    return rows
+    """Retrieves all users from the User table."""
+    sql = "SELECT * FROM User"
+    with create_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute(sql)
+        return cursor.fetchall()
 
-def search_user(name):
-    conn = create_connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM users WHERE name LIKE ?", ('%' + name + '%',))
-    rows = cursor.fetchall()
-    conn.close()
-    return rows
-
-def delete_user(user_id):
-    conn = create_connection()
-    cursor = conn.cursor()
-    cursor.execute("DELETE FROM users WHERE id = ?", (user_id,))
-    conn.commit()
-    conn.close()
-    print("🗑️ User deleted.")
+def update_user_status(user_id, new_status):
+    """Updates the status of a user."""
+    sql = "UPDATE User SET user_status = ? WHERE user_id = ?"
+    with create_connection() as conn:
+        try:
+            cursor = conn.cursor()
+            cursor.execute(sql, (new_status, user_id))
+            conn.commit()
+            print("User status updated successfully.")
+        except sqlite3.Error as e:
+            print(f"Database error: {e}")
