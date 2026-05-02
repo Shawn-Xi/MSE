@@ -56,3 +56,9 @@ Justification: Separates user/administrator permissions, enables rate management
 6. Table: RateUpdateLog
 Core Purpose: Log all exchange rate modification operations.
 Justification: Ensures compliance via audit trails, tracks rate changes, and enables responsibility traceability for administrators.
+
+
+week4 activity 1
+---
+2 files. run week4aitivity2.py and will get pic:week4activity2.png
+---
