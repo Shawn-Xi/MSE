@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="WjebcmG5qTFzsPmj6CsN">
+    <mxGraphModel dx="862" dy="593" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;convertToSvg=1;fontSize=13;" value="admin" vertex="1">
+          <mxGeometry height="60" width="30" x="110" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-2" parent="1" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="400" width="330" x="249" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-4" parent="5IB0-iPM_NPkqlZdFC9Z-2" style="ellipse;whiteSpace=wrap;html=1;" value="edit rate" vertex="1">
+          <mxGeometry height="80" width="120" x="104" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-5" parent="5IB0-iPM_NPkqlZdFC9Z-2" style="ellipse;whiteSpace=wrap;html=1;" value="add currency" vertex="1">
+          <mxGeometry height="80" width="120" x="104" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-6" parent="5IB0-iPM_NPkqlZdFC9Z-2" style="ellipse;whiteSpace=wrap;html=1;" value="delete currency" vertex="1">
+          <mxGeometry height="80" width="120" x="104" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-7" parent="5IB0-iPM_NPkqlZdFC9Z-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="currency exchange system" vertex="1">
+          <mxGeometry height="30" width="139" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-18" parent="5IB0-iPM_NPkqlZdFC9Z-2" style="ellipse;whiteSpace=wrap;html=1;" value="ban customer" vertex="1">
+          <mxGeometry height="80" width="120" x="104" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-8" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="5IB0-iPM_NPkqlZdFC9Z-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="140" y="240" as="sourcePoint" />
+            <mxPoint x="140" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-10" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=0.3333333333333333;entryDx=0;entryDy=0;entryPerimeter=0;" target="5IB0-iPM_NPkqlZdFC9Z-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="350" y="124" as="sourcePoint" />
+            <mxPoint x="180" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-13" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="5IB0-iPM_NPkqlZdFC9Z-6" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="150" y="240" as="sourcePoint" />
+            <mxPoint x="394" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-19" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="5IB0-iPM_NPkqlZdFC9Z-18" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="150" y="240" as="sourcePoint" />
+            <mxPoint x="483" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IB0-iPM_NPkqlZdFC9Z-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;labelBackgroundColor=light-dark(#08c1c4, #ededed);" value="An admin will maintain this system, including the supported currency types, the rate and block the user who try to hack the system" vertex="1">
+          <mxGeometry height="50" width="520" x="150" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
