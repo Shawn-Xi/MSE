@@ -1,0 +1,56 @@
+<mxGraphModel dx="1024" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <mxCell id="flight_class" value="Flight" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fontFamily=Consolas;fontSize=12;fillColor=#F8F9FA;strokeColor=#1B365D;fontColor=#1B365D;" vertex="1" parent="1">
+      <mxGeometry x="280" y="60" width="280" height="170" as="geometry" />
+    </mxCell>
+    <mxCell id="flight_attr_1" value="+ flight_number: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="flight_class">
+      <mxGeometry y="26" width="280" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="flight_attr_2" value="+ origin: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="flight_class">
+      <mxGeometry y="46" width="280" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="flight_attr_3" value="+ destination: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="flight_class">
+      <mxGeometry y="66" width="280" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="flight_attr_4" value="+ departure_time: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="flight_class">
+      <mxGeometry y="86" width="280" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="flight_attr_5" value="+ airline: str = &quot;Air New Zealand&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="flight_class">
+      <mxGeometry y="106" width="280" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="flight_divider" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;html=1;strokeColor=#1B365D;" vertex="1" parent="flight_class">
+      <mxGeometry y="126" width="280" height="8" as="geometry" />
+    </mxCell>
+    <mxCell id="flight_method_1" value="+ display_flight_details()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="flight_class">
+      <mxGeometry y="134" width="280" height="30" as="geometry" />
+    </mxCell>
+
+    <mxCell id="domestic_class" value="DomesticFlight" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fontFamily=Consolas;fontSize=12;fillColor=#F4F6F9;strokeColor=#1B365D;fontColor=#1B365D;" vertex="1" parent="1">
+      <mxGeometry x="260" y="340" width="320" height="130" as="geometry" />
+    </mxCell>
+    <mxCell id="domestic_attr_1" value="+ aircraft_type: str" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="domestic_class">
+      <mxGeometry y="26" width="320" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="domestic_attr_2" value="+ is_koru_club_available: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="domestic_class">
+      <mxGeometry y="46" width="320" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="domestic_divider" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;html=1;strokeColor=#1B365D;" vertex="1" parent="domestic_class">
+      <mxGeometry y="66" width="320" height="8" as="geometry" />
+    </mxCell>
+    <mxCell id="domestic_method_1" value="+ check_koru_club_status(): bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="domestic_class">
+      <mxGeometry y="74" width="320" height="20" as="geometry" />
+    </mxCell>
+    <mxCell id="domestic_method_2" value="+ display_flight_details() &lt;i&gt;{override}&lt;/i&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[];portConstraint=eastwest;html=1;fontFamily=Consolas;" vertex="1" parent="domestic_class">
+      <mxGeometry y="94" width="320" height="30" as="geometry" />
+    </mxCell>
+
+    <mxCell id="inheritance_arrow" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;srcPortConstraint=eastwest;strokeColor=#1B365D;strokeWidth=1.5;" edge="1" parent="1" source="domestic_class" target="flight_class">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <mo originX="0" originY="0" as="points" />
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>
