@@ -2,64 +2,112 @@
 
 class Flight:
     """
-    Parent class representing a general flight.
-    Contains attributes and methods common to all types of flights.
+    Top-level parent class representing a generic flight.
     """
-    def __init__(self, flight_number, origin, destination, departure_time):
-        # Shared attributes for all flights
+    def __init__(self, flight_number, airline="Air New Zealand"):
+        print("-> Initializing Flight")
         self.flight_number = flight_number
-        self.origin = origin
-        self.destination = destination
-        self.departure_time = departure_time
-        self.airline = "Air New Zealand"  # Default airline for all flights
+        self.airline = airline
 
-    def display_flight_details(self):
-        """
-        Shared method to display the core details of any flight.
-        This method is intended to be inherited by subclasses.
-        """
-        print(f"--- Flight Information ---")
-        print(f"Airline: {self.airline}")
-        print(f"Flight Number: {self.flight_number}")
-        print(f"From: {self.origin} To: {self.destination}")
-        print(f"Departure: {self.departure_time}")
+    def get_airline_info(self):
+        """Returns the airline name."""
+        return f"This flight is operated by {self.airline}."
+
+    def display_flight_id(self):
+        """Displays the unique flight identifier."""
+        print(f"Flight ID: {self.airline} {self.flight_number}")
 
 
 class DomesticFlight(Flight):
     """
-    Subclass representing a domestic flight within New Zealand.
-    It inherits from the Flight class and adds specific attributes and methods.
+    Inherits from Flight. Represents a flight within a single country.
     """
-    def __init__(self, flight_number, origin, destination, departure_time, aircraft_type):
-        # --- INHERITANCE ---
-        # Call the constructor of the parent class (Flight) to initialize shared attributes.
-        super().__init__(flight_number, origin, destination, departure_time)
-        
-        # --- SUBCLASS SPECIFIC ATTRIBUTE ---
-        # Attribute specific to domestic flights
+    def __init__(self, flight_number, origin, destination, **kwargs):
+        print("--> Initializing DomesticFlight")
+        # --- MULTILEVEL INHERITANCE ---
+        # Pass relevant arguments up to the parent (Flight)
+        super().__init__(flight_number=flight_number, **kwargs)
+        self.origin = origin
+        self.destination = destination
+
+    def calculate_domestic_fare(self, base_fare=100):
+        """Calculates a simple fare for a domestic flight."""
+        return base_fare * 1.15  # Add 15% tax
+
+    def display_route(self):
+        """Displays the flight's route."""
+        print(f"Route: {self.origin} -> {self.destination}")
+
+
+class InternationalFlight(Flight):
+    """
+    Inherits from Flight. Represents a flight between different countries.
+    """
+    def __init__(self, flight_number, origin, destination, stopover_country, **kwargs):
+        print("--> Initializing InternationalFlight")
+        # --- MULTILEVEL INHERITANCE ---
+        super().__init__(flight_number=flight_number, **kwargs)
+        self.origin = origin
+        self.destination = destination
+        self.stopover_country = stopover_country
+
+    def check_visa_requirements(self):
+        """Checks if a visa is required for the stopover."""
+        if self.stopover_country:
+            print(f"Visa check required for stopover in {self.stopover_country}.")
+        else:
+            print("This is a direct international flight.")
+
+    def display_route(self):
+        """Displays the international flight's route, including stopovers."""
+        route = f"Route: {self.origin} -> "
+        if self.stopover_country:
+            route += f"{self.stopover_country} -> "
+        route += self.destination
+        print(route)
+
+
+class AirNZManagedFlight(DomesticFlight, InternationalFlight):
+    """
+    --- HYBRID INHERITANCE ---
+    Inherits from both DomesticFlight and InternationalFlight.
+    This class represents a final, fully-managed flight with specific operational details.
+    
+    Method Resolution Order (MRO) will be:
+    AirNZManagedFlight -> DomesticFlight -> InternationalFlight -> Flight -> object
+    """
+    def __init__(self, flight_number, origin, destination, stopover_country=None, aircraft_type=None, is_koru_flight=False):
+        print("---> Initializing AirNZManagedFlight")
+        # --- HANDLING THE DIAMOND PROBLEM ---
+        # We explicitly call the __init__ of the next class in the MRO that has the attributes we need.
+        # In this case, InternationalFlight's __init__ is more comprehensive.
+        # The `**kwargs` pattern is not used here to show the explicit call.
+        super().__init__(
+            flight_number=flight_number, 
+            origin=origin, 
+            destination=destination, 
+            stopover_country=stopover_country
+        )
         self.aircraft_type = aircraft_type
-        self.is_koru_club_available = self.check_koru_club_status()
+        self.is_koru_flight = is_koru_flight
 
-    def check_koru_club_status(self):
-        """
-        Subclass specific method.
-        Determines if Koru Club is available based on the origin airport.
-        """
-        # A simple check for major NZ airports
-        major_airports = ["Auckland", "Wellington", "Christchurch", "Dunedin"]
-        return self.origin in major_airports
+    def assign_aircraft(self, aircraft_type):
+        """Assigns a specific aircraft to the flight."""
+        self.aircraft_type = aircraft_type
+        print(f"Aircraft {self.aircraft_type} assigned to flight {self.flight_number}.")
 
-    def display_flight_details(self):
-        """
-        --- METHOD OVERRIDING ---
-        This method overrides the parent's display_flight_details method.
-        It first calls the parent method to display shared details,
-        and then adds its own specific information.
-        """
-        # Call the parent class's method to print the general flight details
-        super().display_flight_details()
+    def display_full_details(self):
+        """Displays a complete summary of the managed flight."""
+        print(f"\n--- Full Flight Details for {self.flight_number} ---")
+        self.display_flight_id()  # Inherited from Flight
         
-        # Now, print the details specific to the DomesticFlight subclass
+        # The MRO ensures display_route() from DomesticFlight is called first.
+        # We can call the InternationalFlight one explicitly if needed.
+        self.display_route() 
+        
+        if self.stopover_country:
+            self.check_visa_requirements() # Inherited from InternationalFlight
+        
         print(f"Aircraft: {self.aircraft_type}")
-        print(f"Koru Club Available at Origin: {'Yes' if self.is_koru_club_available else 'No'}")
-        print(f"--------------------------")
+        print(f"Koru Club Access: {'Yes' if self.is_koru_flight else 'No'}")
+        print("--------------------------------------------------")
