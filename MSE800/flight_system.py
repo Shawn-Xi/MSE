@@ -4,7 +4,7 @@ class Flight:
     """
     Top-level parent class representing a generic flight.
     """
-    def __init__(self, flight_number, airline="Air New Zealand"):
+    def __init__(self, flight_number, airline="Air New Zealand", **kwargs):
         print("-> Initializing Flight")
         self.flight_number = flight_number
         self.airline = airline
@@ -26,7 +26,10 @@ class DomesticFlight(Flight):
         print("--> Initializing DomesticFlight")
         # --- MULTILEVEL INHERITANCE ---
         # Pass relevant arguments up to the parent (Flight)
-        super().__init__(flight_number=flight_number, **kwargs)
+        # This call is made "cooperative" to work with multiple inheritance.
+        # It passes along arguments it doesn't use itself but which are
+        # needed by other classes in the Method Resolution Order (MRO).
+        super().__init__(flight_number=flight_number, origin=origin, destination=destination, **kwargs)
         self.origin = origin
         self.destination = destination
 
