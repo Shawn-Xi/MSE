@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="PzLCS6rlWxovEFKMQolP">
+    <mxGraphModel dx="862" dy="1762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-7" edge="1" parent="1" source="Z0UnOgVCAGFzgoVVoHJn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Z0UnOgVCAGFzgoVVoHJn-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="1.&lt;span style=&quot;background-color: transparent;&quot;&gt;Practice randomly with selectable question counts (35, 50, 80, All).&lt;/span&gt;&lt;div&gt;2.&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Practice sequentially by chapter, fetched in paginated batches of 10.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;3.&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Filter questions by status: Practised, Unpractised, and Wrong Answered.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;4.Provide sub-filters for questions answered wrong once, twice, or more.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;5.Display dynamic, filtered question counts for all filter categories.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;6.Track all user progress and answer history.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;7.Provide immediate visual feedback (red/green) and explanations for answers.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;8.Show a final score modal with a reminder to practice mistakes.&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="560" x="200" y="-1070" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-11" edge="1" parent="1" source="Z0UnOgVCAGFzgoVVoHJn-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Z0UnOgVCAGFzgoVVoHJn-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="Frontend: React. Javascript.&lt;div&gt;Backend: Python, FastAPI,&amp;nbsp;&lt;/div&gt;&lt;div&gt;Database: Sqlite3&lt;/div&gt;&lt;div&gt;Container: Docker&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="490" x="235" y="-920" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-12" edge="1" parent="1" source="Z0UnOgVCAGFzgoVVoHJn-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Z0UnOgVCAGFzgoVVoHJn-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="pair coded, collapcate with git, repo on Github.&lt;div&gt;week 1: design and split the requirements&lt;/div&gt;&lt;div&gt;week 2: implementation&lt;/div&gt;&lt;div&gt;week 3: test and bug fix&lt;/div&gt;&lt;div&gt;week 4: extra feature implementation. like vip module, feedback module, discussion module.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="505" x="235" y="-820" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-10" edge="1" parent="1" source="Z0UnOgVCAGFzgoVVoHJn-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Z0UnOgVCAGFzgoVVoHJn-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="deploy the system with docker on Azure first, with web application." vertex="1">
+          <mxGeometry height="30" width="375" x="265" y="-660" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="bug and new feature in feedback will be updated as part of daily maintenance&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="435" x="250" y="-590" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-13" edge="1" parent="1" source="Z0UnOgVCAGFzgoVVoHJn-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Z0UnOgVCAGFzgoVVoHJn-4" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="488" y="-750" as="sourcePoint" />
+            <mxPoint x="453" y="-660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;" value="we will use the system by ourselves and practice to pass the theory test" vertex="1">
+          <mxGeometry height="30" width="405" x="265" y="-720" as="geometry" />
+        </mxCell>
+        <mxCell id="Z0UnOgVCAGFzgoVVoHJn-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#33FFFF;" value="Group X&lt;div&gt;Weifei Xi &amp;amp; Adiya&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="10" y="-1120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
